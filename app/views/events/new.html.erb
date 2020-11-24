@@ -2,6 +2,8 @@
 
 <%= form_with model: @event, local: true do |f| %>
 
+  <%= render 'shared/error_messages', model: f.object %> 
+
     <div class="title">
       <%= f.collection_select(:title_id, Title.all, :id, :name, {}, {class:"select-box"}) %>
     </div>
