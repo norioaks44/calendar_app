@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2020_11_24_053729) do
     t.integer "title_id"
     t.text "info"
     t.date "start_time"
-    t.integer "time_id"
+    t.integer "meeting_time_id"
     t.text "coach_review"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
