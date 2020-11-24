@@ -1,0 +1,26 @@
+<h1><%= @event.start_time %> の活動</h1>
+
+<div>
+<%= @event.title.name %>
+</div>
+<div>
+  <% if @event.meeting_time_id != 2 %>
+    <%= @event.meeting_time.name %>〜
+  <% end %>
+</div>
+<div>
+    <%= @event.info %>
+</div>
+<div>
+    <%= @event.coach_review %>
+</div>
+
+
+<div>
+  <%= link_to '編集', edit_event_path, class: "event-edit-btn" %>
+  <%= link_to '削除', event_path(@event.id), method: :delete, class: "event-destroy-btn" %>
+</div>
+<div>
+  <%=link_to 'もどる', root_path, class:"back-btn" %>
+</div>
+

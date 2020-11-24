@@ -17,6 +17,14 @@ RSpec.describe Event, type: :model do
       expect(@event.errors.full_messages).to include "Title Select"
     end
 
+    it "同じ日付に重複して登録できない" do
+      @event.save
+      another_event = FactoryBot.build(:event)
+      another_event.start_time = @event.start_time
+      another_event.valid?
+      binding.pry
+      expect(another_event.errors.full_messages).to include "Start time has already been taken"
+    end
     it "日付が空だと登録できない" do
       @event.start_time = nil
       @event.valid?

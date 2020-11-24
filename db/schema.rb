@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_24_053729) do
+ActiveRecord::Schema.define(version: 2020_11_24_110330) do
 
   create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "title_id"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_11_24_053729) do
     t.text "coach_review"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["start_time"], name: "index_events_on_start_time", unique: true
   end
 
 end
