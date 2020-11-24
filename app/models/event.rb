@@ -6,7 +6,7 @@ class Event < ApplicationRecord
   with_options presence: true do
     validates :title_id, numericality: { other_than: 1, message: 'Select' }
     validates :meeting_time_id, numericality: { other_than: 1, message: 'Select' }
-    validates :start_time
+    validates :start_time, uniqueness: true
   end
 
 end

@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  
   def index
     @events = Event.all
   end
@@ -15,6 +16,11 @@ class EventsController < ApplicationController
       render :new
     end
   end
+
+  def show
+    @event = Event.find(params[:id])
+  end
+
 
   private
 

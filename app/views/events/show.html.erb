@@ -1,0 +1,29 @@
+<h1><%= @event.start_time %>の予定</h1>
+
+<div>
+<%= @event.title.name %>
+</div>
+<div>
+  <% if @event.meeting_time_id != 2 %>
+    <%= @event.meeting_time.name %>〜
+  <% end %>
+</div>
+<div>
+  <% if @event.info = "" %>
+    特になし
+  <% else %>
+    <%= @event.info %>
+  <% end %>
+</div>
+<div>
+  <% if @event.coach_review = "" %>
+    特になし
+  <% else %>
+    <%= @event.coach_review %>
+  <% end %>
+</div>
+
+
+<div>
+</div>
+
