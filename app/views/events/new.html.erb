@@ -1,0 +1,30 @@
+<h1>活動日登録</h1>
+
+<%= form_with model: @event, local: true do |f| %>
+
+    <div class="title">
+      <%= f.collection_select(:title_id, Title.all, :id, :name, {}, {class:"select-box"}) %>
+    </div>
+
+    <div class="start_time">
+      <%= f.date_select :start_time %>
+    </div>
+
+    <div class="time">
+      <%# <%= f.collection_select(:time_id, Time.all, :id, :name, {}, {class:"select-box"}) %>
+    </div>
+
+    <div class="info">
+      <%= f.text_area :info %>
+    </div>
+    
+    
+    <div class="send">
+      <%= form_with(model: @event, local: true) do |form|%>
+        <%= form.submit "登録する" ,class:"sell-btn" %>
+      <% end %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+  </div>
+
+
+<% end %>
