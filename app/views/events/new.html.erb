@@ -11,7 +11,7 @@
     </div>
 
     <div class="time">
-      <%# <%= f.collection_select(:time_id, Time.all, :id, :name, {}, {class:"select-box"}) %>
+      <%= f.collection_select(:meeting_time_id, MeetingTime.all, :id, :name, {}, {class:"select-box"}) %>
     </div>
 
     <div class="info">
