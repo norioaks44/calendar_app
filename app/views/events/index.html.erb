@@ -3,7 +3,9 @@
 
 <div class="calendar-part">
 
-  <h2><%= link_to '活動日を登録する', new_event_path %></h2>
+  <div class="new-day">
+    <%= link_to '活動日を登録する', new_event_path, class: "day-regist"%>
+  </div>
 
 <%= month_calendar events: @events do |date, events| %>
   <%= date.day %>
@@ -11,6 +13,11 @@
   <% events.each do |event| %>
     <div>
       <%= event.title.name %>
+    </div>
+    <div>
+      <% if event.meeting_time.id != 2 %>
+        <%= event.meeting_time.name %>〜
+      <% end %>
     </div>
   <% end %>
 
