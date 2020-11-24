@@ -11,10 +11,10 @@
   <%= date.day %>
 
   <% events.each do |event| %>
-    <div>
+    <div class="day_title_name">
       <%= event.title.name %>
     </div>
-    <div>
+    <div class="day_meeting_time">
       <% if event.meeting_time.id != 2 %>
         <%= event.meeting_time.name %>〜
       <% end %>
