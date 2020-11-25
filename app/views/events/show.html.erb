@@ -15,12 +15,13 @@
     <%= @event.coach_review %>
 </div>
 
-
-<div>
-  <%= link_to '編集', edit_event_path, class: "event-edit-btn" %>
-  <%= link_to '削除', event_path(@event.id), method: :delete, class: "event-destroy-btn" %>
-</div>
-<div>
-  <%=link_to 'もどる', root_path, class:"back-btn" %>
-</div>
+<% if user_signed_in? && current_user.id = 1 %>
+  <div>
+    <%= link_to '編集', edit_event_path, class: "event-edit-btn" %>
+    <%= link_to '削除', event_path(@event.id), method: :delete, class: "event-destroy-btn" %>
+  </div>
+<% end %>
+  <div>
+    <%=link_to 'もどる', root_path, class:"back-btn" %>
+  </div>
 
