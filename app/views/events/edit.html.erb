@@ -25,13 +25,15 @@
       </div>
       <%= f.text_area :info ,class: 'day-info', placeholder:"練習内容の説明や活動場所など", rows:'4'%>
     </div>
-    
-    <div class="coach-review">
-      <div>
-        <span class="coach-review-title">コーチレビュー</span>
+
+    <% if current_user.id == 1 %>
+      <div class="coach-review">
+        <div>
+          <span class="coach-review-title">コーチレビュー</span>
+        </div>
+        <%= f.text_area :coach_review ,class: 'day-coach-review', placeholder:"練習メニュー、試合について評価する", rows:'4'%>
       </div>
-      <%= f.text_area :coach_review ,class: 'day-coach-review', placeholder:"練習メニュー、試合について評価する", rows:'4'%>
-    </div>
+    <% end %>
     
     <div class="send">
       <%= form_with(model: @event, local: true) do |form|%>
